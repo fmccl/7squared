@@ -47,6 +47,7 @@ function App() {
       }}>Play again</button><button onClick={() => {setWin(false); setCanPlay(false);}}>Show grid</button>
       </div>
     </div>
+    <div className="help"><h1>{(turn === BLUE ? "Blue" : "Black") + "'s turn."}</h1></div>
     <div className={"grid " + (errored ? "errored" : "")}>
       {grid.map((row, i) => (
         <div className="row" key={i}>
@@ -75,6 +76,10 @@ function App() {
           ))}
         </div>
       ))}
+    </div>
+    <div className="help">
+      <h1>How to play</h1>
+      <p>This is a 2 player game. The colour of the background determines who's turn it is. You can move by clicking on a cell adjacent to any of your own colour. You can win by clicking on an adjacent cell that is your enemy's colour.</p>
     </div>
   </div>
 }
