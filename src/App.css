@@ -1,0 +1,113 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  transition: background 0.2s ease;
+  background: linear-gradient(45deg, #222, #333);
+  z-index: 0;
+}
+
+.app::before {
+  transition: all ease 0.2s;
+  position: absolute;
+  content: "";
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(45deg, #011, #233);
+  z-index: 1;
+  opacity: 0;
+}
+
+.app.blue::before {
+  opacity: 1;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+  outline: 0px solid #622;
+  z-index: 2;
+}
+
+.grid.errored {
+  outline: 30px solid #644;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 100px;
+  max-width: calc(100vw/7);
+  height: 100px;
+  max-height: calc(100vh/7);
+  background-color: #555;
+  box-sizing: border-box;
+  border: 1px solid #333;
+}
+
+.cell-black {
+  background-color: #000;
+}
+
+.cell-blue {
+  background-color: #244;
+}
+
+.win {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.2s ease;
+  z-index: 3;
+  opacity: 0;
+  color: white;
+  pointer-events: none;
+  font: 1em sans-serif;
+}
+
+.app.blue .win {
+  background-color: #244;
+}
+
+.app.black .win {
+  background-color: #333;
+}
+
+button {
+  background-color: transparent;
+  border-radius: 10px;
+  outline: 2px solid white;
+  color: white;
+  padding: 0.5em 1em;
+  margin: 0.5em;
+  transition: all 0.1s linear;
+  font-weight: bold;
+  font-size: large;
+}
+
+button:hover {
+  outline: 4px solid white;
+}
+
+.win.active {
+  opacity: 1;
+  pointer-events: initial;
+}
