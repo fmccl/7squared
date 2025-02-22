@@ -48,6 +48,9 @@ body {
   z-index: 2;
   color: white;
   padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .grid.errored {
