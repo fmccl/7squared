@@ -30,7 +30,13 @@ function App() {
 
   const [errored, setErrored] = useState(false);
 
-  return <div className={"app " + turn}>
+  const [squareSize, setSquareSize] = useState(window.innerWidth > window.innerHeight ? window.innerHeight / SIZE : window.innerWidth / SIZE);
+
+  window.addEventListener("resize", () => {
+    setSquareSize(window.innerWidth > window.innerHeight ? window.innerHeight / SIZE : window.innerWidth / SIZE);
+  });
+
+  return <div className={"app " + turn} style={{"--square-size": squareSize + "px"} as React.CSSProperties}>
     <div className={"win " + (win ? "active" : "")}>
       <h1>{turn === BLUE ? "Blue" : "Black"} wins!</h1>
       <div className="btns">

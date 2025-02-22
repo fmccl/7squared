@@ -48,10 +48,8 @@ body {
 }
 
 .cell {
-  width: 100px;
-  max-width: calc(100vw/7);
-  height: 100px;
-  max-height: calc(100vh/7);
+  width: var(--square-size);
+  height: var(--square-size);
   background-color: #555;
   box-sizing: border-box;
   border: 1px solid #333;
