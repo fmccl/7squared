@@ -4,7 +4,7 @@ import './App.css'
 const BLUE = 'blue';
 const BLACK = 'black';
 
-const SIZE = 7;
+const SIZE = 10;
 
 function makeStartingGrid() {
   let base = new Array(SIZE).fill(null).map(() => new Array(SIZE).fill(null));
